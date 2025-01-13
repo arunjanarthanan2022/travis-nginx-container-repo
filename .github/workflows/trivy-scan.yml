@@ -35,7 +35,7 @@ jobs:
       # Step 5: Scan Docker Image with Trivy and generate CSV report
       - name: Scan Docker Image with Trivy and generate CSV report
         run: |
-          trivy image --exit-code 1 --severity HIGH,CRITICAL --format table --no-progress nginx-container-repo:latest > > trivy-report.txt
+          trivy image --exit-code 1 --severity HIGH,CRITICAL --format table --no-progress nginx-container-repo:latest > trivy-report.txt
           
       # Step 6: Upload the Trivy CSV report as an artifact (using latest version of upload-artifact)
       - name: Upload Trivy CSV Report as Artifact
