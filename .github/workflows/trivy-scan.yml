@@ -37,9 +37,9 @@ jobs:
         run: |
           trivy image --exit-code 1 --severity HIGH,CRITICAL --format csv --output trivy-report.csv nginx-container-repo:latest
           
-      # Step 6: Upload the Trivy CSV report as an artifact (optional)
+      # Step 6: Upload the Trivy CSV report as an artifact (using latest version of upload-artifact)
       - name: Upload Trivy CSV Report as Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: trivy-report
           path: trivy-report.csv
